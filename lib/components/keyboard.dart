@@ -31,6 +31,7 @@ class Keyboard extends StatelessWidget {
               buttonCallback: buttonCallback,
             ),
           ]),
+          const SizedBox(height: 1),
           ButtonRow([
             Button(
               text: "7",
@@ -50,6 +51,7 @@ class Keyboard extends StatelessWidget {
               buttonCallback: buttonCallback,
             ),
           ]),
+          const SizedBox(height: 1),
           ButtonRow([
             Button(
               text: "4",
@@ -69,6 +71,7 @@ class Keyboard extends StatelessWidget {
               buttonCallback: buttonCallback,
             )
           ]),
+          const SizedBox(height: 1),
           ButtonRow([
             Button(
               text: "1",
@@ -88,6 +91,7 @@ class Keyboard extends StatelessWidget {
               buttonCallback: buttonCallback,
             ),
           ]),
+          const SizedBox(height: 1),
           ButtonRow([
             Button(
               text: "0",
