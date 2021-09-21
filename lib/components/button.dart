@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Button extends StatelessWidget {
   const Button(
       {required this.text,
+      required this.buttonCallback,
       this.doubleSize = false,
       this.color = DEFAULT,
       Key? key})
@@ -14,6 +15,7 @@ class Button extends StatelessWidget {
   final String text;
   final bool doubleSize;
   final Color color;
+  final void Function(String) buttonCallback;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class Button extends StatelessWidget {
       flex: doubleSize ? 2 : 1,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(primary: color),
-        onPressed: () {},
+        onPressed: () {buttonCallback(text);},
         child: Text(
           text,
           style: const TextStyle(
