@@ -3,41 +3,106 @@ import 'package:flutter_calc/components/button.dart';
 import 'package:flutter_calc/components/button_row.dart';
 
 class Keyboard extends StatelessWidget {
-  const Keyboard({Key? key}) : super(key: key);
+  const Keyboard({required this.buttonCallback, Key? key}) : super(key: key);
+
+  final void Function(String) buttonCallback;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 500,
       child: Column(
-        children: const [
+        children: [
           ButtonRow([
-            Button(text: "AC", doubleSize: true),
-            Button(text: "%"),
-            Button(text: "/", color: Button.OPERATOR),
+            Button(
+              text: "AC",
+              color: Button.DARK,
+              doubleSize: true,
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "%",
+              color: Button.DARK,
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "/",
+              color: Button.OPERATOR,
+              buttonCallback: buttonCallback,
+            ),
           ]),
           ButtonRow([
-            Button(text: "7"),
-            Button(text: "8"),
-            Button(text: "9"),
-            Button(text: "X", color: Button.OPERATOR),
+            Button(
+              text: "7",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "8",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "9",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "X",
+              color: Button.OPERATOR,
+              buttonCallback: buttonCallback,
+            ),
           ]),
           ButtonRow([
-            Button(text: "4"),
-            Button(text: "5"),
-            Button(text: "6"),
-            Button(text: "-", color: Button.OPERATOR)
+            Button(
+              text: "4",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "5",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "6",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "-",
+              color: Button.OPERATOR,
+              buttonCallback: buttonCallback,
+            )
           ]),
           ButtonRow([
-            Button(text: "1"),
-            Button(text: "2"),
-            Button(text: "3"),
-            Button(text: "+", color: Button.OPERATOR),
+            Button(
+              text: "1",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "2",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "3",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "+",
+              color: Button.OPERATOR,
+              buttonCallback: buttonCallback,
+            ),
           ]),
           ButtonRow([
-            Button(text: "0", doubleSize: true),
-            Button(text: "."),
-            Button(text: "=", color: Button.OPERATOR),
+            Button(
+              text: "0",
+              doubleSize: true,
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: ".",
+              buttonCallback: buttonCallback,
+            ),
+            Button(
+              text: "=",
+              color: Button.OPERATOR,
+              buttonCallback: buttonCallback,
+            ),
           ]),
         ],
       ),
